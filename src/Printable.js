@@ -9,7 +9,7 @@ function px(mm) {
   return mm * MM_TO_PX;
 }
 
-export function Printable({ onRemove, ...props }) {
+export function Printable({ onRemove, padded, ...props }) {
   const [mmWidth, setMmWidth] = useState(INITIAL_WIDTH_MM);
   const [mmHeight, setMmHeight] = useState(0);
   const [size, setSize] = useState(0);
@@ -47,7 +47,13 @@ export function Printable({ onRemove, ...props }) {
           <Icon.XCircle color="red" size={16} onClick={onRemove} />
         </div>
         <div className="my-1" />
-        <div className="p-3 bg-white" style={{ border: "1px dashed #d9d9d9" }}>
+        <div
+          className="bg-white"
+          style={{
+            border: "1px dashed #d9d9d9",
+            padding: padded ? 16 : 0
+          }}
+        >
           <img
             alt="img"
             {...props}
