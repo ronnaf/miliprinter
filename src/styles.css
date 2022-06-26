@@ -20,7 +20,8 @@ body {
 @media print {
   #header,
   #form,
-  #footer {
+  #footer,
+  #copyright {
     display: none;
   }
 }

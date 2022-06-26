@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GitHub } from "react-feather";
 import { Printable } from "./Printable";
 import "./styles.css";
 
@@ -20,6 +21,17 @@ export default function App() {
       <nav id="header" className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
           <div className="navbar-brand">Miliprinter</div>
+          <div>
+            <GitHub
+              color="white"
+              style={{
+                cursor: "pointer"
+              }}
+              onClick={() => {
+                window.open("https://github.com/ronnaf/miliprinter", "_blank", "noopener,noreferrer");
+              }}
+            />
+          </div>
         </div>
       </nav>
       <main className="container-fluid my-4 d-grid gap-4">
@@ -93,6 +105,13 @@ export default function App() {
           </button>
         </div>
       </main>
+      <footer id="copyright" style={{ position: "absolute", bottom: 16 }}>
+        <div className="container-fluid">
+          <small>
+            © Ronna Firmo <span style={{ color: "gray" }}>&#47;&#47; 2022</span>
+          </small>
+        </div>
+      </footer>
     </div>
   );
 }
